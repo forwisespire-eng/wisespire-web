@@ -30,24 +30,19 @@ export default function HowItWorks() {
           </motion.h2>
         </div>
 
-        {/* Desktop: circular badges on a wavy dotted line */}
+        {/* Desktop: circular badges on a dotted connector, aligned to the grid's column centers */}
         <div className="relative mt-20 hidden lg:block">
-          <svg
-            className="absolute left-0 top-9 h-10 w-full"
-            viewBox="0 0 1200 40"
-            preserveAspectRatio="none"
+          <div
+            className="absolute left-[12.5%] right-[12.5%] top-9 hidden h-0.5 lg:block"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, rgba(7,95,239,0.45) 1.5px, transparent 1.5px)",
+              backgroundSize: "11px 2px",
+              backgroundRepeat: "repeat-x",
+              backgroundPosition: "center",
+            }}
             aria-hidden="true"
-          >
-            <path
-              d="M 60 20 C 260 -10, 340 50, 460 20 S 760 -10, 940 20 S 1100 50, 1140 20"
-              fill="none"
-              stroke="#075FEF"
-              strokeOpacity="0.35"
-              strokeWidth="2.5"
-              strokeDasharray="2 10"
-              strokeLinecap="round"
-            />
-          </svg>
+          />
 
           <div className="relative grid grid-cols-4 gap-6">
             {steps.map((step, i) => {
