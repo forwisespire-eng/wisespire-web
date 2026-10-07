@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Mail, Globe, MapPin, CheckCircle2, Loader2 } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, CheckCircle2, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -51,9 +51,9 @@ export default function ContactPage() {
             </div>
             <div className="flex items-center gap-3 text-[15px] text-text">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-light-blue text-blue">
-                <Globe size={17} />
+                <Phone size={17} />
               </span>
-              www.wisespire.in
+              +91 70936 00115
             </div>
             <div className="flex items-start gap-3 text-[15px] text-text">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-soft-orange text-orange">
