@@ -30,19 +30,28 @@ export default function HowItWorks() {
           </motion.h2>
         </div>
 
-        {/* Desktop: circular badges on a dotted connector, aligned to the grid's column centers */}
+        {/* Desktop: circular badges on a wavy dotted connector.
+            Path x-coordinates (12.5/37.5/62.5/87.5) are percentages that match the
+            4-column grid's exact column centers, so the curve always hits each
+            badge dead-center regardless of container width. */}
         <div className="relative mt-20 hidden lg:block">
-          <div
-            className="absolute left-[12.5%] right-[12.5%] top-9 hidden h-0.5 lg:block"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle, rgba(7,95,239,0.45) 1.5px, transparent 1.5px)",
-              backgroundSize: "11px 2px",
-              backgroundRepeat: "repeat-x",
-              backgroundPosition: "center",
-            }}
+          <svg
+            className="absolute left-0 top-0 h-[72px] w-full"
+            viewBox="0 0 100 40"
+            preserveAspectRatio="none"
             aria-hidden="true"
-          />
+          >
+            <path
+              d="M 12.5 20 C 21 4, 29 4, 37.5 20 C 46 36, 54 36, 62.5 20 C 71 4, 79 4, 87.5 20"
+              fill="none"
+              stroke="#075FEF"
+              strokeOpacity="0.4"
+              strokeWidth="2.2"
+              strokeDasharray="0.5 7"
+              strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
 
           <div className="relative grid grid-cols-4 gap-6">
             {steps.map((step, i) => {
