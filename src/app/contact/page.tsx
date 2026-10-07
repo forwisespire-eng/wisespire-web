@@ -1,14 +1,29 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { ArrowRight, Mail, Globe, MapPin, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Mail, Globe, MapPin, CheckCircle2, Loader2 } from "lucide-react";
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error();
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -56,7 +71,7 @@ export default function ContactPage() {
         </div>
 
         <div className="rounded-[28px] border border-border bg-white p-6 sm:p-10">
-          {submitted ? (
+          {status === "success" ? (
             <div className="flex flex-col items-center justify-center py-12 text-center">
               <CheckCircle2 size={44} className="text-orange" />
               <h2 className="mt-4 text-[20px] font-bold text-navy">Thank you!</h2>
@@ -88,12 +103,24 @@ export default function ContactPage() {
                   placeholder="Tell us about your goals..."
                 />
               </div>
+              {status === "error" && (
+                <p className="text-[14px] text-orange">
+                  Something went wrong sending your message. Please try again or email us directly.
+                </p>
+              )}
               <button
                 type="submit"
-                className="focus-ring group inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue px-6 py-3.5 text-[15px] font-semibold text-white transition-transform hover:scale-[1.02] sm:w-auto"
+                disabled={status === "loading"}
+                className="focus-ring group inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue px-6 py-3.5 text-[15px] font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100 sm:w-auto"
               >
-                Book a Free Consultation
-                <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+                {status === "loading" ? (
+                  <Loader2 size={16} className="animate-spin" />
+                ) : (
+                  <>
+                    Book a Free Consultation
+                    <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+                  </>
+                )}
               </button>
             </form>
           )}
