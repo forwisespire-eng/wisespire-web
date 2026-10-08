@@ -33,7 +33,7 @@ export const programs: Program[] = [
     icon: GraduationCap,
     tagline: "A learning management system built to scale.",
     description:
-      "A full-featured learning management system for delivering, tracking, and managing courses — built for institutions and businesses alike.",
+      "",
     accent: "orange",
     duration: "Ongoing",
     level: "All levels",

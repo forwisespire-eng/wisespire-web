@@ -125,7 +125,9 @@ export default function ContactPage() {
             <div className="border-l-2 border-blue pl-4">
               <p className="text-[14px] font-bold text-navy">Branch Office</p>
               <p className="mt-1 text-[15px] leading-relaxed text-text-secondary">
-                3U Unit, 3rd Floor, Dwaraka Pride,
+                Wisespire Business Solutions Pvt Ltd,
+                <br />
+                Dwaraka Pride -The Headquarters,
                 <br />
                 Plot No.4/1, Survey No.64, Huda Techno Enclave,
                 <br />
@@ -196,9 +198,8 @@ export default function ContactPage() {
                   rows={4}
                   aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? "message-error" : undefined}
-                  className={`focus-ring w-full rounded-2xl border bg-bg-very-light px-4 py-3 text-[15px] text-text outline-none placeholder:text-text-secondary/60 ${
-                    errors.message ? "border-orange" : "border-border"
-                  }`}
+                  className={`focus-ring w-full rounded-2xl border bg-bg-very-light px-4 py-3 text-[15px] text-text outline-none placeholder:text-text-secondary/60 ${errors.message ? "border-orange" : "border-border"
+                    }`}
                   placeholder="Tell us about your goals..."
                 />
                 {errors.message && (
@@ -256,9 +257,8 @@ function Field({
         type={type}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${name}-error` : undefined}
-        className={`focus-ring w-full rounded-2xl border bg-bg-very-light px-4 py-3 text-[15px] text-text outline-none placeholder:text-text-secondary/60 ${
-          error ? "border-orange" : "border-border"
-        }`}
+        className={`focus-ring w-full rounded-2xl border bg-bg-very-light px-4 py-3 text-[15px] text-text outline-none placeholder:text-text-secondary/60 ${error ? "border-orange" : "border-border"
+          }`}
       />
       {error && (
         <p id={`${name}-error`} className="mt-1.5 text-[13px] text-orange">
