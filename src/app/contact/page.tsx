@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type SubmitEvent } from "react";
-import { ArrowRight, Mail, Phone, MapPin, CheckCircle2, Loader2 } from "lucide-react";
+import { ArrowRight, Mail, Phone, CheckCircle2, Loader2 } from "lucide-react";
 
 const countryCodes = [
   { code: "+91", label: "India (+91)" },
@@ -109,17 +109,28 @@ export default function ContactPage() {
               </span>
               +91 70936 00115
             </div>
-            <div className="flex items-start gap-3 text-[15px] text-text">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-soft-orange text-orange">
-                <MapPin size={17} />
-              </span>
-              <span>
+          </div>
+
+          <div className="mt-8 space-y-5">
+            <div className="border-l-2 border-orange pl-4">
+              <p className="text-[14px] font-bold text-navy">Registered Office</p>
+              <p className="mt-1 text-[15px] leading-relaxed text-text-secondary">
                 Wisespire Business Solutions Pvt Ltd,
                 <br />
                 No.1 &amp; 1A Sy No.96, Amruthahalli,
                 <br />
                 Bengaluru 560092, Karnataka, India
-              </span>
+              </p>
+            </div>
+            <div className="border-l-2 border-blue pl-4">
+              <p className="text-[14px] font-bold text-navy">Branch Office</p>
+              <p className="mt-1 text-[15px] leading-relaxed text-text-secondary">
+                3U Unit, 3rd Floor, Dwaraka Pride,
+                <br />
+                Plot No.4/1, Survey No.64, Huda Techno Enclave,
+                <br />
+                Madhapur, HITEC City, Hyderabad, Telangana 500081
+              </p>
             </div>
           </div>
         </div>
