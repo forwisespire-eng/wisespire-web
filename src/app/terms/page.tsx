@@ -33,7 +33,7 @@ export default function TermsPage() {
             <p className="mt-3">
               This website is provided to share information about
               Wisespire&rsquo;s programs and services and to let visitors
-              get in touch with us. You agree not to misuse the site —
+              get in touch with us. You agree not to misuse the site
               including attempting to disrupt it, scrape it at scale, or
               use it for any unlawful purpose.
             </p>

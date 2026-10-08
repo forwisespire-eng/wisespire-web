@@ -32,7 +32,7 @@ export default function PrivacyPage() {
           <div>
             <h2 className="text-[20px] font-bold text-navy">Information we collect</h2>
             <p className="mt-3">
-              We collect information you choose to give us directly — for
+              We collect information you choose to give us directly for
               example, through the contact form on this website, where we
               ask for your name, email address, organization, an optional
               phone number, and your message. We do not ask for this
@@ -44,16 +44,11 @@ export default function PrivacyPage() {
             <h2 className="text-[20px] font-bold text-navy">How we use it</h2>
             <p className="mt-3">
               We use the information you submit solely to respond to your
-              inquiry — to understand what you&rsquo;re asking about and get
+              inquiry to understand what you&rsquo;re asking about and get
               back to you. We don&rsquo;t sell, rent, or share your
               information with third parties for marketing purposes.
             </p>
-            <p className="mt-3">
-              Contact form submissions are delivered to us by email through
-              Resend, a third-party email delivery service. Resend
-              processes the message contents solely to deliver that email;
-              it does not have any other relationship with your data.
-            </p>
+
           </div>
 
           <div>
@@ -66,16 +61,6 @@ export default function PrivacyPage() {
             </p>
           </div>
 
-          <div>
-            <h2 className="text-[20px] font-bold text-navy">Hosting and server logs</h2>
-            <p className="mt-3">
-              This site is hosted on Vercel. Like most hosting providers,
-              Vercel may automatically log standard technical information
-              (such as IP address, browser type, and request timestamps)
-              for security and reliability purposes. We do not access or
-              use these logs to identify individual visitors.
-            </p>
-          </div>
 
           <div>
             <h2 className="text-[20px] font-bold text-navy">Data retention</h2>
@@ -83,7 +68,7 @@ export default function PrivacyPage() {
               We retain contact form submissions only as long as needed to
               respond to your inquiry and keep a reasonable record of
               business communications. You can ask us to delete your
-              information at any time — see &ldquo;Your rights&rdquo;
+              information at any time see &ldquo;Your rights&rdquo;
               below.
             </p>
           </div>
