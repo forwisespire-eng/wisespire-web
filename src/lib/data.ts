@@ -20,8 +20,6 @@ export type Program = {
   tagline: string;
   description: string[];
   accent: Accent;
-  duration: string;
-  level: string;
   features: string[];
   includes: string[];
 };
@@ -38,8 +36,6 @@ export const programs: Program[] = [
       "We believe technology should make learning easier, more engaging, and accessible. Our LMS helps students stay connected with their learning, build good learning habits, and take greater ownership of their educational journey.",
     ],
     accent: "orange",
-    duration: "Ongoing",
-    level: "All levels",
     features: [
       "Course & Content Management",
       "Hands-on Projects",
@@ -60,8 +56,6 @@ export const programs: Program[] = [
       "We believe learning is most meaningful when students don't just learn what the answer is, but also learn how to think, explore, ask questions, and discover solutions on their own.",
     ],
     accent: "blue",
-    duration: "8 weeks",
-    level: "Beginner to Advanced",
     features: [
       "Beginner to Advanced",
       "Hands-on Projects",
@@ -82,8 +76,6 @@ export const programs: Program[] = [
       "We believe students learn best when they can explore, experiment, ask questions, and discover things for themselves. Our Virtual Labs encourage curiosity and help students develop a deeper understanding of what they learn in the classroom.",
     ],
     accent: "orange",
-    duration: "Self-paced",
-    level: "All levels",
     features: [
       "Beginner to Advanced",
       "Hands-on Projects",
@@ -104,8 +96,6 @@ export const programs: Program[] = [
       "We believe a good website should be more than just a digital presence. It should clearly communicate, create a positive experience, and serve a meaningful purpose for the organization and its audience.",
     ],
     accent: "blue",
-    duration: "10 weeks",
-    level: "Beginner to Advanced",
     features: [
       "Beginner to Advanced",
       "Hands-on Projects",
@@ -126,8 +116,6 @@ export const programs: Program[] = [
       "Our focus is on building cloud environments that are reliable, observable, performance-driven, and scalable, with the engineering practices needed to operate them effectively in real-world conditions.",
     ],
     accent: "orange",
-    duration: "10 weeks",
-    level: "Intermediate",
     features: [
       "Beginner to Advanced",
       "Hands-on Projects",
@@ -148,8 +136,6 @@ export const programs: Program[] = [
       "Our focus is on building solutions that are practical, reliable, and useful helping organizations turn their data into insights, automate processes, and make smarter decisions with AI.",
     ],
     accent: "blue",
-    duration: "12 weeks",
-    level: "Beginner to Advanced",
     features: [
       "Beginner to Advanced",
       "Hands-on Projects",
@@ -179,15 +165,6 @@ export const clientSegments = [
     title: "Enterprises",
     description: "We work with all sectors of enterprises across the globe.",
   },
-];
-
-export const trustLogos = [
-  "TechSphere",
-  "NextGen University",
-  "BrightMind",
-  "Global Institute",
-  "FutureHub",
-  "SkillForge",
 ];
 
 export const stats = [

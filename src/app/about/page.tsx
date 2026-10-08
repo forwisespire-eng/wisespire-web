@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <>
       <section className="px-5 py-16 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-[1320px] items-center gap-12 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-[1320px] items-start gap-12 lg:grid-cols-2">
           <div>
             <span className="text-xs font-semibold tracking-widest text-orange">
               — ABOUT US
@@ -29,7 +29,7 @@ export default function AboutPage() {
               to make learning more meaningful, engaging, and useful.
             </p>
           </div>
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[32px] border-4 border-white shadow-[0_30px_70px_-25px_rgba(9,36,91,0.3)]">
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-[420px] overflow-hidden rounded-[32px] border-4 border-white shadow-[0_30px_70px_-25px_rgba(9,36,91,0.3)]">
             <Image
               src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop"
               alt="Students learning together"

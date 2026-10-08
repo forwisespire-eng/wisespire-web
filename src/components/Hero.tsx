@@ -3,14 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Star, TrendingUp, Layers, Rocket } from "lucide-react";
-
-const avatarUrls = [
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
-];
+import { ArrowRight, TrendingUp, Layers, Rocket } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -81,44 +74,6 @@ export default function Hero() {
             </Link>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0.4}
-            className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6"
-          >
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-3">
-                {avatarUrls.map((src, i) => (
-                  <Image
-                    key={src}
-                    src={src}
-                    alt=""
-                    width={36}
-                    height={36}
-                    className="h-9 w-9 rounded-full border-2 border-bg-primary object-cover"
-                    style={{ zIndex: avatarUrls.length - i }}
-                  />
-                ))}
-              </div>
-              <p className="text-[14px] font-medium leading-tight text-text">
-                10,000+ learners
-                <br />
-                <span className="text-text-secondary">trust Wisespire</span>
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="flex text-orange" aria-hidden="true">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
-                ))}
-              </div>
-              <p className="text-[14px] font-medium text-text">
-                4.8/5 <span className="text-text-secondary">from 1,200+ reviews</span>
-              </p>
-            </div>
-          </motion.div>
         </div>
 
         <motion.div

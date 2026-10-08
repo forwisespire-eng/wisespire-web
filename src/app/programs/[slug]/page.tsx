@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowRight, Check, Clock, BarChart2 } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { programs } from "@/lib/data";
 
 export function generateStaticParams() {
@@ -75,17 +75,6 @@ export default async function ProgramDetailPage({
               {program.description.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-4">
-              <span className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-[14px] font-medium text-navy">
-                <Clock size={15} className="text-orange" />
-                {program.duration}
-              </span>
-              <span className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-[14px] font-medium text-navy">
-                <BarChart2 size={15} className="text-blue" />
-                {program.level}
-              </span>
             </div>
 
             <Link

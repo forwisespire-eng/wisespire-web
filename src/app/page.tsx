@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import TrustLogos from "@/components/TrustLogos";
 import Programs from "@/components/Programs";
 import WhyWisespire from "@/components/WhyWisespire";
 import Outcomes from "@/components/Outcomes";
@@ -11,7 +10,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TrustLogos />
       <Programs />
       <WhyWisespire />
       <Outcomes />
