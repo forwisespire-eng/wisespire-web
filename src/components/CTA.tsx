@@ -72,7 +72,7 @@ export default function CTA() {
           <div className="relative mx-auto hidden aspect-[4/5] w-full max-w-[320px] lg:block">
             <div className="relative h-full w-full overflow-hidden rounded-[28px] border-4 border-white/20 shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=700&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=700&auto=format&fit=crop"
                 alt="Student smiling, ready to learn"
                 fill
                 sizes="320px"

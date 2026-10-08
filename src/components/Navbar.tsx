@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Search, ArrowRight, Menu } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import MegaMenu from "./MegaMenu";
 import MobileMenu from "./MobileMenu";
@@ -107,14 +107,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <button
-            type="button"
-            aria-label="Search"
-            onMouseEnter={() => setProgramsOpen(false)}
-            className="focus-ring hidden h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-text-secondary transition-colors hover:text-blue sm:flex"
-          >
-            <Search size={18} />
-          </button>
           <Link
             href="/contact"
             onMouseEnter={() => setProgramsOpen(false)}
