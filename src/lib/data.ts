@@ -226,6 +226,7 @@ export const steps = [
 export const navLinks = [
   { label: "Solutions", href: "/#solutions" },
   { label: "Resources", href: "/#resources" },
+  { label: "Certificate", href: "/certificate" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
