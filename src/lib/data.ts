@@ -224,10 +224,10 @@ export const steps = [
 ];
 
 export const navLinks = [
+  { label: "About", href: "/about" },
   { label: "Solutions", href: "/#solutions" },
   { label: "Resources", href: "/#resources" },
-  { label: "Certificate", href: "/certificate" },
-  { label: "About", href: "/about" },
+  { label: "Certifications", href: "/certificate" },
   { label: "Contact", href: "/contact" },
 ];
 
