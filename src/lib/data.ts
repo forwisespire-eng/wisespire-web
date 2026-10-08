@@ -195,7 +195,7 @@ export const steps = [
   {
     index: "04",
     title: "Grow",
-    description: "Get placed, advance your career, or achieve your academic goals.",
+    description: "Advance your career and achieve your academic goals.",
     accent: "blue" as Accent,
   },
 ];
