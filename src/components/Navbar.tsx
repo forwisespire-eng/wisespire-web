@@ -48,7 +48,12 @@ export default function Navbar() {
         className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-8 lg:px-12"
         aria-label="Main"
       >
-        <Link href="/" className="flex items-center gap-2 focus-ring" aria-label="Wisespire home">
+        <Link
+          href="/"
+          className="flex items-center gap-2 focus-ring"
+          aria-label="Wisespire home"
+          onMouseEnter={() => setProgramsOpen(false)}
+        >
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -105,12 +110,14 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Search"
+            onMouseEnter={() => setProgramsOpen(false)}
             className="focus-ring hidden h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-text-secondary transition-colors hover:text-blue sm:flex"
           >
             <Search size={18} />
           </button>
           <Link
             href="/contact"
+            onMouseEnter={() => setProgramsOpen(false)}
             className="focus-ring group hidden items-center gap-2 rounded-full bg-blue px-5 py-2.5 text-[15px] font-semibold text-white transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:inline-flex"
           >
             Get Started
