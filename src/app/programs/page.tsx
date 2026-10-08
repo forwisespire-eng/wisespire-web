@@ -13,9 +13,7 @@ export default function ProgramsPage() {
     <section className="px-5 py-16 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-[1320px]">
         <div className="max-w-2xl">
-          <span className="text-xs font-semibold tracking-widest text-orange">
-            — OUR PROGRAMS
-          </span>
+          
           <h1 className="mt-3 text-[34px] font-extrabold leading-tight tracking-tight text-navy sm:text-[44px]">
             Skill paths designed for{" "}
             <span className="text-blue">your future.</span>

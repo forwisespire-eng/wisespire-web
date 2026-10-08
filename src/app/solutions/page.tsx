@@ -21,19 +21,16 @@ function SolutionImage({ src, alt }: { src: string; alt: string }) {
 export default function SolutionsPage() {
   return (
     <>
-      <section className="px-5 py-14 sm:px-8 lg:px-12">
+      <section className="px-5 pt-14 pb-4 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-[1320px]">
-          <span className="text-xs font-semibold tracking-widest text-orange">
-            — SOLUTIONS
-          </span>
-          <h1 className="mt-3 max-w-2xl text-[34px] font-extrabold leading-tight tracking-tight text-navy sm:text-[44px]">
+          <h1 className="text-[34px] font-extrabold leading-tight tracking-tight text-navy sm:text-[44px]">
             Solutions for every part of{" "}
             <span className="text-blue">learning.</span>
           </h1>
         </div>
       </section>
 
-      <section id="students" className="px-5 py-12 sm:px-8 lg:px-12">
+      <section id="students" className="px-5 pb-12 sm:px-8 lg:px-12">
         <div className="mx-auto grid max-w-[1320px] items-start gap-10 lg:grid-cols-2">
           <div>
             <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-soft-orange text-orange">

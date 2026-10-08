@@ -9,14 +9,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
-      <section className="px-5 py-16 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-[1320px] items-start gap-12 lg:grid-cols-2">
+    <section className="px-5 py-16 sm:px-8 lg:px-12">
+      <div className="mx-auto grid max-w-[1320px] items-start gap-12 lg:grid-cols-2">
+        <div className="space-y-6">
           <div>
-            <span className="text-xs font-semibold tracking-widest text-orange">
-              — ABOUT US
-            </span>
-            <h1 className="mt-3 text-[34px] font-extrabold leading-tight tracking-tight text-navy sm:text-[44px]">
+            <h1 className="text-[34px] font-extrabold leading-tight tracking-tight text-navy sm:text-[44px]">
               About <span className="text-blue">Wisespire</span>
             </h1>
             <p className="mt-4 text-[16px] leading-relaxed text-text-secondary">
@@ -29,60 +26,55 @@ export default function AboutPage() {
               to make learning more meaningful, engaging, and useful.
             </p>
           </div>
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-[420px] overflow-hidden rounded-[32px] border-4 border-white shadow-[0_30px_70px_-25px_rgba(9,36,91,0.3)]">
-            <Image
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop"
-              alt="Students learning together"
-              fill
-              sizes="(min-width: 1024px) 420px, 90vw"
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
 
-      <section className="px-5 pb-20 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-[1320px]">
-          <div className="max-w-[650px] space-y-6 text-[16px] leading-relaxed text-text-secondary">
-            <p>
-              We believe learning should be more than attending classes,
-              reading textbooks, and preparing for exams. Students learn
-              differently, and they need opportunities to ask questions,
-              explore ideas, try things out, and understand how their
-              learning connects to the world around them.
-            </p>
-            <p>
-              Our offerings include{" "}
-              <strong className="font-semibold text-navy">
-                skill development programs, digital learning, Learning
-                Management Systems (LMS), virtual labs, and technology-based
-                learning solutions
-              </strong>
-              . We use these to give students more opportunities to learn,
-              practice, experiment, and build confidence beyond traditional
-              classroom learning.
-            </p>
-            <p>
-              Our aim is to help students become{" "}
-              <strong className="font-semibold text-navy">
-                curious learners, better thinkers, confident
-                problem-solvers, and creative individuals
-              </strong>
-              . We want to create learning experiences that not only help
-              students understand what they learn, but also encourage them
-              to think about what they can do with it.
-            </p>
-            <p>
-              At Wisespire, we believe education is not just about finding
-              the right answer. It is about{" "}
-              <strong className="font-semibold text-navy">
-                learning how to think, how to learn, and how to use what you
-                learn.
-              </strong>
-            </p>
-          </div>
+          <p className="text-[16px] leading-relaxed text-text-secondary">
+            We believe learning should be more than attending classes,
+            reading textbooks, and preparing for exams. Students learn
+            differently, and they need opportunities to ask questions,
+            explore ideas, try things out, and understand how their
+            learning connects to the world around them.
+          </p>
+          <p className="text-[16px] leading-relaxed text-text-secondary">
+            Our offerings include{" "}
+            <strong className="font-semibold text-navy">
+              skill development programs, digital learning, Learning
+              Management Systems (LMS), virtual labs, and technology-based
+              learning solutions
+            </strong>
+            . We use these to give students more opportunities to learn,
+            practice, experiment, and build confidence beyond traditional
+            classroom learning.
+          </p>
+          <p className="text-[16px] leading-relaxed text-text-secondary">
+            Our aim is to help students become{" "}
+            <strong className="font-semibold text-navy">
+              curious learners, better thinkers, confident problem-solvers,
+              and creative individuals
+            </strong>
+            . We want to create learning experiences that not only help
+            students understand what they learn, but also encourage them
+            to think about what they can do with it.
+          </p>
+          <p className="text-[16px] leading-relaxed text-text-secondary">
+            At Wisespire, we believe education is not just about finding
+            the right answer. It is about{" "}
+            <strong className="font-semibold text-navy">
+              learning how to think, how to learn, and how to use what you
+              learn.
+            </strong>
+          </p>
         </div>
-      </section>
-    </>
+
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[32px] border-4 border-white shadow-[0_30px_70px_-25px_rgba(9,36,91,0.3)] lg:sticky lg:top-24">
+          <Image
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop"
+            alt="Students learning together"
+            fill
+            sizes="(min-width: 1024px) 420px, 90vw"
+            className="object-cover"
+          />
+        </div>
+      </div>
+    </section>
   );
 }
