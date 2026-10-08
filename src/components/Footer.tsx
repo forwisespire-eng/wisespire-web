@@ -56,7 +56,7 @@ export default function Footer() {
           </div>
 
           {/* Desktop columns */}
-          <div className="hidden grid-cols-4 gap-8 sm:grid">
+          <div className="hidden grid-cols-3 gap-8 sm:grid">
             {footerColumns.map((col) => (
               <div key={col.title}>
                 <h3 className="text-[14px] font-bold text-navy">{col.title}</h3>

@@ -226,7 +226,6 @@ export const steps = [
 export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Solutions", href: "/#solutions" },
-  { label: "Resources", href: "/#resources" },
   { label: "Certifications", href: "/certificate" },
   { label: "Contact", href: "/contact" },
 ];
@@ -243,15 +242,6 @@ export const footerColumns = [
       { label: "For Professionals", href: "/solutions/professionals" },
       { label: "For Institutions", href: "/solutions/institutions" },
       { label: "For Businesses", href: "/solutions/businesses" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Blog", href: "/resources/blog" },
-      { label: "Guides", href: "/resources/guides" },
-      { label: "Events", href: "/resources/events" },
-      { label: "Help Center", href: "/resources/help" },
     ],
   },
   {

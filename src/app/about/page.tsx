@@ -42,43 +42,45 @@ export default function AboutPage() {
       </section>
 
       <section className="px-5 pb-20 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-[720px] space-y-6 text-[16px] leading-relaxed text-text-secondary">
-          <p>
-            We believe learning should be more than attending classes,
-            reading textbooks, and preparing for exams. Students learn
-            differently, and they need opportunities to ask questions,
-            explore ideas, try things out, and understand how their learning
-            connects to the world around them.
-          </p>
-          <p>
-            Our offerings include{" "}
-            <strong className="font-semibold text-navy">
-              skill development programs, digital learning, Learning
-              Management Systems (LMS), virtual labs, and technology-based
-              learning solutions
-            </strong>
-            . We use these to give students more opportunities to learn,
-            practice, experiment, and build confidence beyond traditional
-            classroom learning.
-          </p>
-          <p>
-            Our aim is to help students become{" "}
-            <strong className="font-semibold text-navy">
-              curious learners, better thinkers, confident problem-solvers,
-              and creative individuals
-            </strong>
-            . We want to create learning experiences that not only help
-            students understand what they learn, but also encourage them to
-            think about what they can do with it.
-          </p>
-          <p>
-            At Wisespire, we believe education is not just about finding the
-            right answer. It is about{" "}
-            <strong className="font-semibold text-navy">
-              learning how to think, how to learn, and how to use what you
-              learn.
-            </strong>
-          </p>
+        <div className="mx-auto max-w-[1320px]">
+          <div className="max-w-[650px] space-y-6 text-[16px] leading-relaxed text-text-secondary">
+            <p>
+              We believe learning should be more than attending classes,
+              reading textbooks, and preparing for exams. Students learn
+              differently, and they need opportunities to ask questions,
+              explore ideas, try things out, and understand how their
+              learning connects to the world around them.
+            </p>
+            <p>
+              Our offerings include{" "}
+              <strong className="font-semibold text-navy">
+                skill development programs, digital learning, Learning
+                Management Systems (LMS), virtual labs, and technology-based
+                learning solutions
+              </strong>
+              . We use these to give students more opportunities to learn,
+              practice, experiment, and build confidence beyond traditional
+              classroom learning.
+            </p>
+            <p>
+              Our aim is to help students become{" "}
+              <strong className="font-semibold text-navy">
+                curious learners, better thinkers, confident
+                problem-solvers, and creative individuals
+              </strong>
+              . We want to create learning experiences that not only help
+              students understand what they learn, but also encourage them
+              to think about what they can do with it.
+            </p>
+            <p>
+              At Wisespire, we believe education is not just about finding
+              the right answer. It is about{" "}
+              <strong className="font-semibold text-navy">
+                learning how to think, how to learn, and how to use what you
+                learn.
+              </strong>
+            </p>
+          </div>
         </div>
       </section>
     </>
