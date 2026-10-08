@@ -203,7 +203,7 @@ export const steps = [
 export const navLinks = [
   { label: "About", href: "/about" },
   { label: "Solutions", href: "/solutions" },
-  { label: "Certifications", href: "/certificate" },
+  { label: "Certifications", href: "/certifications" },
   { label: "Contact", href: "/contact" },
 ];
 
