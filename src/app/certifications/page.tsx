@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Certifications — Wisespire",
   description:
     "Wisespire Business Solutions is certified across quality, security, and process maturity standards — ISO 9001:2015, ISO 27001:2022, CMMI Level 3, MSME, and Startup India.",
-  alternates: { canonical: "/certificate" },
+  alternates: { canonical: "/certifications" },
 };
 
 const certifications = [
