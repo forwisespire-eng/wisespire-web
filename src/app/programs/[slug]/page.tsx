@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!program) return {};
   return {
     title: `${program.name} — Wisespire`,
-    description: program.description,
+    description: program.description.join(" "),
   };
 }
 
@@ -72,8 +72,8 @@ export default async function ProgramDetailPage({
               {program.name}
             </h1>
             <div className="mt-4 max-w-lg space-y-3 text-[16px] leading-relaxed text-text-secondary">
-              {program.description.split(/(?<=\.)\s*/).filter(Boolean).map((sentence) => (
-                <p key={sentence}>{sentence}</p>
+              {program.description.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
 

@@ -18,7 +18,7 @@ export type Program = {
   name: string;
   icon: LucideIcon;
   tagline: string;
-  description: string;
+  description: string[];
   accent: Accent;
   duration: string;
   level: string;
@@ -32,10 +32,11 @@ export const programs: Program[] = [
     name: "LMS",
     icon: GraduationCap,
     tagline: "A learning management system built to scale.",
-    description:
-      "Our Skill Development programs go beyond traditional classroom learning, helping students build the skills they need to succeed in school, in everyday life, and in the future. " +
-      "Through engaging activities, hands-on projects, challenges, and practical learning experiences, students develop critical thinking, problem-solving, creativity, communication, collaboration, digital skills, and confidence. " +
-      "We believe learning is most meaningful when students don't just learn what the answer is, but also learn how to think, explore, ask questions, and discover solutions on their own.",
+    description: [
+      "Our Learning Management System (LMS) brings lessons, study materials, assignments, activities, and assessments together in one place, making it easier for students to access and manage their learning anytime, from anywhere.",
+      "With an organized and interactive learning environment, students can access lessons, practice their skills, complete assignments, take assessments, and follow their learning progress in a simple and structured way.",
+      "We believe technology should make learning easier, more engaging, and accessible. Our LMS helps students stay connected with their learning, build good learning habits, and take greater ownership of their educational journey.",
+    ],
     accent: "orange",
     duration: "Ongoing",
     level: "All levels",
@@ -53,8 +54,11 @@ export const programs: Program[] = [
     name: "Skill Development",
     icon: TrendingUp,
     tagline: "Build practical, in-demand skills.",
-    description:
-      "Structured, outcome-driven training that builds practical skills aligned with what the market actually hires for.",
+    description: [
+      "Our Skill Development programs go beyond traditional classroom learning, helping students build the skills they need to succeed in school, in everyday life, and in the future.",
+      "Through engaging activities, hands-on projects, challenges, and practical learning experiences, students develop critical thinking, problem-solving, creativity, communication, collaboration, digital skills, and confidence.",
+      "We believe learning is most meaningful when students don't just learn what the answer is, but also learn how to think, explore, ask questions, and discover solutions on their own.",
+    ],
     accent: "blue",
     duration: "8 weeks",
     level: "Beginner to Advanced",
@@ -72,8 +76,11 @@ export const programs: Program[] = [
     name: "Virtual Labs",
     icon: FlaskConical,
     tagline: "Practice in real, hands-on environments.",
-    description:
-      "Cloud-based virtual labs that let learners practice on real tools and environments — no local setup required.",
+    description: [
+      "Our Virtual Labs give students an opportunity to explore concepts through interactive experiments and activities in a safe and engaging digital environment. They can learn by trying things out, observing results, and understanding how concepts work in real situations.",
+      "Through virtual experiments, simulations, and hands-on activities, students can explore different ideas, test their understanding, make observations, and learn from their experiences. This makes complex concepts easier to understand and more enjoyable to learn.",
+      "We believe students learn best when they can explore, experiment, ask questions, and discover things for themselves. Our Virtual Labs encourage curiosity and help students develop a deeper understanding of what they learn in the classroom.",
+    ],
     accent: "orange",
     duration: "Self-paced",
     level: "All levels",
@@ -91,8 +98,11 @@ export const programs: Program[] = [
     name: "Web Development",
     icon: Code2,
     tagline: "Create modern web experiences.",
-    description:
-      "Master front-end and back-end engineering, building production-grade web applications with modern frameworks.",
+    description: [
+      "We design and develop websites that are simple, modern, responsive, and easy to use. Our aim is to create a smooth digital experience that helps organizations present their work, services, and ideas clearly to their audience.",
+      "From understanding the requirements and designing the website to development, testing, and deployment, we take care of the complete process. We focus on creating websites that are visually appealing, easy to navigate, reliable, and accessible across different devices.",
+      "We believe a good website should be more than just a digital presence. It should clearly communicate, create a positive experience, and serve a meaningful purpose for the organization and its audience.",
+    ],
     accent: "blue",
     duration: "10 weeks",
     level: "Beginner to Advanced",
@@ -110,8 +120,11 @@ export const programs: Program[] = [
     name: "Cloud Computing",
     icon: Cloud,
     tagline: "Learn cloud tools and infrastructure.",
-    description:
-      "Gain hands-on expertise in cloud architecture, DevOps practices, and scalable infrastructure.",
+    description: [
+      "We help organizations design, deploy, and optimize cloud-native applications and infrastructure for performance, scalability, reliability, and efficient resource utilization.",
+      "Our services bring together cloud engineering, SRE, Performance Engineering, Observability, capacity planning, performance testing, monitoring, and automation. We work across application, infrastructure, and containerized environments to identify bottlenecks, improve system behavior, and prepare applications for changing workloads.",
+      "Our focus is on building cloud environments that are reliable, observable, performance-driven, and scalable, with the engineering practices needed to operate them effectively in real-world conditions.",
+    ],
     accent: "orange",
     duration: "10 weeks",
     level: "Intermediate",
@@ -129,8 +142,11 @@ export const programs: Program[] = [
     name: "Data Science & AI",
     icon: BarChart3,
     tagline: "Build AI skills for tomorrow's world.",
-    description:
-      "Build in-demand skills for tomorrow's world — from statistics and Python to machine learning and applied AI systems.",
+    description: [
+      "We help organizations use data and AI to understand their business, solve problems, and make better decisions. Our work focuses on turning raw data into useful insights and practical solutions.",
+      "We work across data analysis, machine learning, AI models, predictive analytics, automation, and intelligent applications. We help organizations prepare and analyze data, identify meaningful patterns, build AI-driven solutions, and apply them to real-world business needs.",
+      "Our focus is on building solutions that are practical, reliable, and useful helping organizations turn their data into insights, automate processes, and make smarter decisions with AI.",
+    ],
     accent: "blue",
     duration: "12 weeks",
     level: "Beginner to Advanced",
