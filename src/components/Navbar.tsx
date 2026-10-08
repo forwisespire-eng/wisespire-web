@@ -67,6 +67,13 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-1 lg:flex">
           <Link
+            href="/about"
+            className="focus-ring rounded-full px-4 py-2 text-[15px] font-medium text-text transition-colors hover:bg-bg-soft-gray"
+            onMouseEnter={() => setProgramsOpen(false)}
+          >
+            About
+          </Link>
+          <Link
             href="/programs"
             className={`focus-ring rounded-full px-4 py-2 text-[15px] font-medium transition-colors ${
               programsOpen
@@ -80,16 +87,18 @@ export default function Navbar() {
           >
             Programs
           </Link>
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="focus-ring rounded-full px-4 py-2 text-[15px] font-medium text-text transition-colors hover:bg-bg-soft-gray"
-              onMouseEnter={() => setProgramsOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks
+            .filter((link) => link.label !== "About")
+            .map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="focus-ring rounded-full px-4 py-2 text-[15px] font-medium text-text transition-colors hover:bg-bg-soft-gray"
+                onMouseEnter={() => setProgramsOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">

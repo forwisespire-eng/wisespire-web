@@ -69,6 +69,16 @@ export default function MobileMenu({
 
           <nav className="flex flex-col gap-1 px-5 py-4">
             <motion.div custom={0} variants={itemVariants} initial="hidden" animate="show">
+              <Link
+                href="/about"
+                onClick={onClose}
+                className="focus-ring flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-navy hover:bg-bg-soft-gray"
+              >
+                About
+              </Link>
+            </motion.div>
+
+            <motion.div custom={1} variants={itemVariants} initial="hidden" animate="show">
               <button
                 type="button"
                 onClick={() => setProgramsOpen((v) => !v)}
@@ -109,17 +119,19 @@ export default function MobileMenu({
               </AnimatePresence>
             </motion.div>
 
-            {navLinks.map((link, i) => (
-              <motion.div key={link.label} custom={i + 1} variants={itemVariants} initial="hidden" animate="show">
-                <Link
-                  href={link.href}
-                  onClick={onClose}
-                  className="focus-ring flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-navy hover:bg-bg-soft-gray"
-                >
-                  {link.label}
-                </Link>
-              </motion.div>
-            ))}
+            {navLinks
+              .filter((link) => link.label !== "About")
+              .map((link, i) => (
+                <motion.div key={link.label} custom={i + 2} variants={itemVariants} initial="hidden" animate="show">
+                  <Link
+                    href={link.href}
+                    onClick={onClose}
+                    className="focus-ring flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-navy hover:bg-bg-soft-gray"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
 
             <motion.div
               custom={navLinks.length + 1}
