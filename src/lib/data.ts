@@ -33,7 +33,9 @@ export const programs: Program[] = [
     icon: GraduationCap,
     tagline: "A learning management system built to scale.",
     description:
-      "",
+      "Our Skill Development programs go beyond traditional classroom learning, helping students build the skills they need to succeed in school, in everyday life, and in the future. " +
+      "Through engaging activities, hands-on projects, challenges, and practical learning experiences, students develop critical thinking, problem-solving, creativity, communication, collaboration, digital skills, and confidence. " +
+      "We believe learning is most meaningful when students don't just learn what the answer is, but also learn how to think, explore, ask questions, and discover solutions on their own.",
     accent: "orange",
     duration: "Ongoing",
     level: "All levels",

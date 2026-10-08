@@ -71,9 +71,11 @@ export default async function ProgramDetailPage({
             <h1 className="mt-5 text-[36px] font-extrabold leading-tight tracking-tight text-navy sm:text-[46px]">
               {program.name}
             </h1>
-            <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-text-secondary">
-              {program.description}
-            </p>
+            <div className="mt-4 max-w-lg space-y-3 text-[16px] leading-relaxed text-text-secondary">
+              {program.description.split(/(?<=\.)\s*/).filter(Boolean).map((sentence) => (
+                <p key={sentence}>{sentence}</p>
+              ))}
+            </div>
 
             <div className="mt-6 flex flex-wrap gap-4">
               <span className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-[14px] font-medium text-navy">
