@@ -1,22 +1,76 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type SubmitEvent } from "react";
 import { ArrowRight, Mail, Phone, MapPin, CheckCircle2, Loader2 } from "lucide-react";
+
+const countryCodes = [
+  { code: "+91", label: "India (+91)" },
+  { code: "+1", label: "US / Canada (+1)" },
+  { code: "+44", label: "UK (+44)" },
+  { code: "+61", label: "Australia (+61)" },
+  { code: "+971", label: "UAE (+971)" },
+  { code: "+65", label: "Singapore (+65)" },
+  { code: "+49", label: "Germany (+49)" },
+  { code: "+33", label: "France (+33)" },
+  { code: "+81", label: "Japan (+81)" },
+  { code: "+86", label: "China (+86)" },
+  { code: "+27", label: "South Africa (+27)" },
+];
+
+type Errors = Partial<Record<"name" | "email" | "organization" | "message", string>>;
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate(data: FormData): Errors {
+  const errors: Errors = {};
+  const name = String(data.get("name") ?? "").trim();
+  const email = String(data.get("email") ?? "").trim();
+  const organization = String(data.get("organization") ?? "").trim();
+  const message = String(data.get("message") ?? "").trim();
+
+  if (!name) errors.name = "Please enter your full name.";
+  if (!email) errors.email = "Please enter your email address.";
+  else if (!emailPattern.test(email)) errors.email = "Please enter a valid email address.";
+  if (!organization) errors.organization = "Please enter your organization name.";
+  if (!message) errors.message = "Let us know what you'd like to achieve.";
+
+  return errors;
+}
 
 export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errors, setErrors] = useState<Errors>({});
 
-  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("loading");
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const data = new FormData(form);
+
+    const fieldErrors = validate(data);
+    if (Object.keys(fieldErrors).length > 0) {
+      setErrors(fieldErrors);
+      setStatus("idle");
+      return;
+    }
+    setErrors({});
+    setStatus("loading");
+
+    const countryCode = String(data.get("countryCode") ?? "");
+    const phoneDigits = String(data.get("phone") ?? "").trim();
+
+    const payload = {
+      name: data.get("name"),
+      email: data.get("email"),
+      organization: data.get("organization"),
+      phone: phoneDigits ? `${countryCode} ${phoneDigits}` : "",
+      message: data.get("message"),
+    };
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -83,10 +137,41 @@ export default function ContactPage() {
           ) : (
             <form onSubmit={onSubmit} className="space-y-5" noValidate>
               <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Full name" name="name" type="text" required />
-                <Field label="Email address" name="email" type="email" required />
+                <Field label="Full name" name="name" type="text" error={errors.name} />
+                <Field label="Email address" name="email" type="email" error={errors.email} />
               </div>
-              <Field label="Phone number" name="phone" type="tel" />
+              <Field
+                label="Organization"
+                name="organization"
+                type="text"
+                error={errors.organization}
+              />
+              <div>
+                <label htmlFor="phone" className="mb-2 block text-[14px] font-semibold text-navy">
+                  Phone number <span className="text-text-secondary font-normal">(optional)</span>
+                </label>
+                <div className="flex gap-2">
+                  <select
+                    id="countryCode"
+                    name="countryCode"
+                    defaultValue="+91"
+                    aria-label="Country code"
+                    className="focus-ring w-[132px] shrink-0 rounded-2xl border border-border bg-bg-very-light px-3 py-3 text-[15px] text-text outline-none"
+                  >
+                    {countryCodes.map((c) => (
+                      <option key={c.code} value={c.code}>
+                        {c.label}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    className="focus-ring w-full rounded-2xl border border-border bg-bg-very-light px-4 py-3 text-[15px] text-text outline-none placeholder:text-text-secondary/60"
+                  />
+                </div>
+              </div>
               <div>
                 <label
                   htmlFor="message"
@@ -98,10 +183,18 @@ export default function ContactPage() {
                   id="message"
                   name="message"
                   rows={4}
-                  required
-                  className="focus-ring w-full rounded-2xl border border-border bg-bg-very-light px-4 py-3 text-[15px] text-text outline-none placeholder:text-text-secondary/60"
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? "message-error" : undefined}
+                  className={`focus-ring w-full rounded-2xl border bg-bg-very-light px-4 py-3 text-[15px] text-text outline-none placeholder:text-text-secondary/60 ${
+                    errors.message ? "border-orange" : "border-border"
+                  }`}
                   placeholder="Tell us about your goals..."
                 />
+                {errors.message && (
+                  <p id="message-error" className="mt-1.5 text-[13px] text-orange">
+                    {errors.message}
+                  </p>
+                )}
               </div>
               {status === "error" && (
                 <p className="text-[14px] text-orange">
@@ -134,12 +227,12 @@ function Field({
   label,
   name,
   type,
-  required,
+  error,
 }: {
   label: string;
   name: string;
   type: string;
-  required?: boolean;
+  error?: string;
 }) {
   return (
     <div>
@@ -150,9 +243,17 @@ function Field({
         id={name}
         name={name}
         type={type}
-        required={required}
-        className="focus-ring w-full rounded-2xl border border-border bg-bg-very-light px-4 py-3 text-[15px] text-text outline-none placeholder:text-text-secondary/60"
+        aria-invalid={Boolean(error)}
+        aria-describedby={error ? `${name}-error` : undefined}
+        className={`focus-ring w-full rounded-2xl border bg-bg-very-light px-4 py-3 text-[15px] text-text outline-none placeholder:text-text-secondary/60 ${
+          error ? "border-orange" : "border-border"
+        }`}
       />
+      {error && (
+        <p id={`${name}-error`} className="mt-1.5 text-[13px] text-orange">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
