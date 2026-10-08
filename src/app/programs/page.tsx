@@ -5,7 +5,7 @@ import ProgramCard from "@/components/ProgramCard";
 export const metadata: Metadata = {
   title: "Programs — Wisespire",
   description:
-    "Explore Wisespire's industry-aligned programs across Data Science & AI, Web Development, UI/UX Design, Cloud Computing, Cybersecurity, and Business & Management.",
+    "Explore Wisespire's industry-aligned programs across LMS, Skill Development, Virtual Labs, Web Development, Cloud Computing, and Data Science & AI.",
 };
 
 export default function ProgramsPage() {
