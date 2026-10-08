@@ -66,20 +66,20 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
-          <button
-            type="button"
+          <Link
+            href="/programs"
             className={`focus-ring rounded-full px-4 py-2 text-[15px] font-medium transition-colors ${
               programsOpen
                 ? "bg-soft-orange text-orange"
                 : "text-text hover:bg-bg-soft-gray"
             }`}
             onMouseEnter={() => setProgramsOpen(true)}
-            onClick={() => setProgramsOpen((v) => !v)}
+            onClick={() => setProgramsOpen(false)}
             aria-haspopup="true"
             aria-expanded={programsOpen}
           >
             Programs
-          </button>
+          </Link>
           {navLinks.map((link) => (
             <Link
               key={link.label}
