@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Solutions — Wisespire",
   description:
     "Wisespire builds learning solutions for students, educators, and institutions — connecting education, technology, and practical learning.",
+  alternates: { canonical: "/solutions" },
 };
 
 const steps = ["Learn", "Practice", "Build", "Apply", "Improve"];

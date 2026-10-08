@@ -20,6 +20,7 @@ export async function generateMetadata({
   return {
     title: `${program.name} — Wisespire`,
     description: program.description.join(" "),
+    alternates: { canonical: `/programs/${program.slug}` },
   };
 }
 

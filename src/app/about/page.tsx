@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "About — Wisespire",
   description:
     "Wisespire is an EdTech company that creates learning programs, digital learning platforms, and practical learning experiences for students.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

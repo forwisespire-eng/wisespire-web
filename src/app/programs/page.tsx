@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Programs — Wisespire",
   description:
     "Explore Wisespire's industry-aligned programs across LMS, Skill Development, Virtual Labs, Web Development, Cloud Computing, and Data Science & AI.",
+  alternates: { canonical: "/programs" },
 };
 
 export default function ProgramsPage() {
