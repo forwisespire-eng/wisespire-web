@@ -53,7 +53,7 @@ export default function Programs() {
           </Link>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-x-5 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
           {programs.map((program, i) => (
             <ProgramCard key={program.slug} slug={program.slug} index={i} />
           ))}
